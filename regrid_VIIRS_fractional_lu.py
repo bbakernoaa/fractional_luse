@@ -74,8 +74,8 @@ if __name__ == '__main__':
     target_wkt = p.to_wkt()
 
     # assume that the upper left corner is at 0,0 and lon is indexed like lon(y,x)
-    x,y = p(q.grid_lont,q.grid_latt) # lat and lon names are grid_lont and grid_latt
-    x_upper,y_upper = p(q.lon[0,0],q.lat[0,0])
+    x,y = p(target.grid_lont,target.grid_latt) # lat and lon names are grid_lont and grid_latt
+    x_upper,y_upper = p(target.lon[0,0],target.lat[0,0])
     pixel_size_x = x[0,1] - x[0,0]
     pixel_size_y = y[1,0] - y[0,0]
     width,height = len(q.grid_xt),len(q.grid_yt)
