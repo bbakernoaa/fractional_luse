@@ -78,7 +78,7 @@ if __name__ == '__main__':
     x_upper,y_upper = p(target.lon[0,0],target.lat[0,0])
     pixel_size_x = x[0,1] - x[0,0]
     pixel_size_y = y[1,0] - y[0,0]
-    width,height = len(q.grid_xt),len(q.grid_yt)
+    width,height = len(target.grid_xt),len(target.grid_yt)
     gdal_transform = (x_upper,pixel_size_x,0,y_upper,0,pixel_size_y)
 
     data = reproject_dataset_digitized(VIIRS_FILE,gdal_transform,width,height,to_wkt=target_wkt,method=gdal.GRA_Bilinear,levels=levels)
